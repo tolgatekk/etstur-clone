@@ -28,7 +28,7 @@ cd etstur-clone
 ```
 
 2. Bağımlılıkları yükleyin:
-```bash
+   
 # Frontend bağımlılıkları
 npm install
 
@@ -45,7 +45,6 @@ MONGODB_URI=mongodb://localhost:27017/etstur-clone
 ```
 
 4. MongoDB'yi başlatın:
-```bash
 # MongoDB'nin yüklü olduğundan emin olun
 mongod
 ```
@@ -57,7 +56,7 @@ cd backend
 npm start
 
 # Yeni bir terminal açın ve frontend'i başlatın
-cd ../
+cd etstur-clone
 npm run dev
 ```
 
@@ -78,6 +77,5 @@ npm run dev
    - Fotoğrafları
    - Özellikleri
    - Fiyatları
-   - Müsaitlik durumu
    gibi bilgileri görüntüleyin
 
