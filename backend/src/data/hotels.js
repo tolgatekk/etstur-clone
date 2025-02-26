@@ -64,5 +64,26 @@ export const hotels = [
     ],
     rooms: ["Art Oda", "Design Suite", "Villa", "Presidential Suite"],
     available: true
+  },
+  {
+    name: "Akka Hotel",
+    description: "Ailelere özel, hayâlinizdeki tatilin karşılığını alabileceğiniz ve kendinizi evinizde hissedeceğiniz bir otel.",
+    location: "Antalya",
+    city: "Antalya",
+    images: [
+      "https://example.com/akka-hotel.jpg"
+    ],
+    rating: 4.5,
+    price: 8000,
+    amenities: [
+      "Özel Plaj",
+      "Spa",
+      "Fitness Merkezi"
+    ],
+    rooms: [
+      "Standart Oda",
+      "Deluxe Oda"
+    ],
+    available: true
   }
 ];
