@@ -1,14 +1,11 @@
 # ETS Tur Clone
 
-Bu proje, ETS Tur benzeri bir otel rezervasyon sisteminin React ve Node.js ile yapılmış klonudur.
+Bu proje, ETS Tur benzeri bir otel rezervasyon sisteminin React ve Node.js ile yapılmış.
 
 ## Özellikler
 
 - Otel arama ve filtreleme
 - Otel detay sayfası
-- Rezervasyon sistemi
-- Responsive tasarım
-- Material-UI bileşenleri
 
 ## Teknolojiler
 
@@ -16,13 +13,11 @@ Bu proje, ETS Tur benzeri bir otel rezervasyon sisteminin React ve Node.js ile y
 - React
 - Material-UI
 - React Router
-- Vite
 
 ### Backend
 - Node.js
 - Express
 - MongoDB
-- Mongoose
 
 ## Kurulum
 
@@ -86,8 +81,3 @@ npm run dev
    - Müsaitlik durumu
    gibi bilgileri görüntüleyin
 
-4. Rezervasyon yapın
-
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
