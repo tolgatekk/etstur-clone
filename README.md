@@ -78,8 +78,12 @@ npm run dev
    - Özellikleri
    - Fiyatları
    gibi bilgileri görüntüleyin
+
+## Sayfa Görünümleri:
 ![1](https://github.com/user-attachments/assets/79fd2fb9-6ee9-406c-8b92-f9a03bd6ca94)
+
 ![2](https://github.com/user-attachments/assets/20a0008f-c80f-4512-91b7-1efede4a652d)
+
 ![3](https://github.com/user-attachments/assets/704daf0c-993c-4614-8e6b-3bd660073aaa)
 
 
