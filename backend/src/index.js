@@ -43,8 +43,45 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/etstur-cl
     process.exit(1);
   });
 
+// Rezervasyon schema
+const reservationSchema = new mongoose.Schema({
+  date: String,
+  guests: Number,
+  roomId: String,
+  hotelName: String,
+  checkInDate: String,
+  checkOutDate: String,
+  totalNights: Number,
+  totalPrice: Number
+});
+
+const Reservation = mongoose.model('Reservation', reservationSchema);
+
+// Rezervasyon endpoint'i
+app.post('/api/reservations', async (req, res) => {
+  const { date, guests, roomId, hotelName, checkInDate, checkOutDate, totalNights, totalPrice } = req.body;
+  const newReservation = new Reservation({ 
+    date, 
+    guests, 
+    roomId, 
+    hotelName, 
+    checkInDate, 
+    checkOutDate, 
+    totalNights, 
+    totalPrice
+  });
+  try {
+    await newReservation.save();
+    res.status(201).send({ message: 'Rezervasyon başarıyla kaydedildi.' });
+  } catch (error) {
+    res.status(500).send({ message: 'Rezervasyon kaydedilirken bir hata oluştu.', error });
+  }
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });
 });
+
+export default app;

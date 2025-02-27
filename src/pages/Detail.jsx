@@ -63,6 +63,7 @@ const Detail = () => {
     endDate: '',
     personCount: 0
   });
+  const [reservationInfo, setReservationInfo] = useState({ date: '', guests: 0, nights: 0 });
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -84,17 +85,43 @@ const Detail = () => {
         setHotel(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching hotel details:', error);
-        setLoading(false);
+        console.error('Otel bilgileri alınırken bir hata oluştu:', error);
       }
     };
 
-    if (hotelId) {
-      fetchHotelDetails();
-    }
+    fetchHotelDetails();
   }, []);
 
-  if (loading || !hotel) {
+  const handleReservation = async () => {
+    try {
+      const nights = calculateNights();
+      const totalPrice = hotel.price * nights * searchParams.personCount;
+
+      const response = await fetch('http://localhost:5000/api/reservations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          date: searchParams.startDate,
+          guests: searchParams.personCount,
+          roomId: hotel.id,
+          hotelName: hotel.name,
+          checkInDate: searchParams.startDate,
+          checkOutDate: searchParams.endDate,
+          totalNights: nights,
+          totalPrice: totalPrice
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      setReservationInfo({ date: searchParams.startDate, guests: searchParams.personCount, nights: nights });
+    } catch (error) {
+      console.error('Rezervasyon alırken bir hata oluştu:', error);
+    }
+  };
+
+  if (loading) {
     return (
       <Container>
         <Typography variant="h5" sx={{ mt: 4 }}>Yükleniyor...</Typography>
@@ -229,9 +256,24 @@ const Detail = () => {
               </Typography>
             </Box>
 
-            <BookButton fullWidth variant="contained" size="large">
+            <BookButton fullWidth variant="contained" size="large" onClick={handleReservation}>
               Rezervasyon Yap
             </BookButton>
+          </DetailCard>
+
+          <DetailCard sx={{ mt: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Rezervasyon Bilgileri
+            </Typography>
+            <Typography paragraph>
+              Tarih: {reservationInfo.date}
+            </Typography>
+            <Typography paragraph>
+              Konaklayacak Kişi Sayısı: {reservationInfo.guests}
+            </Typography>
+            <Typography paragraph>
+              Toplam Gece Sayısı: {reservationInfo.nights}
+            </Typography>
           </DetailCard>
         </Grid>
       </Grid>
