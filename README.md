@@ -6,6 +6,7 @@ Bu proje, ETS Tur benzeri bir otel rezervasyon sisteminin React ve Node.js ile y
 
 - Otel arama ve filtreleme
 - Otel detay sayfası
+- Rezervasyon işlemleri
 
 ## Teknolojiler
 
@@ -84,6 +85,10 @@ npm run dev
 
 ![2](https://github.com/user-attachments/assets/20a0008f-c80f-4512-91b7-1efede4a652d)
 
-![3](https://github.com/user-attachments/assets/704daf0c-993c-4614-8e6b-3bd660073aaa)
+![3](https://github.com/user-attachments/assets/34f1183a-f72a-49e3-81e8-b930684f8f97)
+
+![4](https://github.com/user-attachments/assets/bac57ac5-228e-4ed5-ace2-878307f54a50)
+
+
 
 
