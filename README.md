@@ -24,7 +24,7 @@ Bu proje, ETS Tur benzeri bir otel rezervasyon sisteminin React ve Node.js ile y
 
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/your-username/etstur-clone.git
+git clone https://github.com/tolgatekk/etstur-clone.git
 cd etstur-clone
 ```
 
@@ -79,6 +79,8 @@ npm run dev
    - Özellikleri
    - Fiyatları
    gibi bilgileri görüntüleyin
+
+4. MongoDB'de verileri görüntüleyin
 
 ## Sayfa Görünümleri:
 ![1](https://github.com/user-attachments/assets/79fd2fb9-6ee9-406c-8b92-f9a03bd6ca94)
